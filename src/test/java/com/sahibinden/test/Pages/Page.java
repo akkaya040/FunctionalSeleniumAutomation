@@ -2,18 +2,16 @@ package com.sahibinden.test.Pages;
 
 import com.sahibinden.test.AbstractFunctions;
 import com.sahibinden.test.ObjectRepos.ObjectRepo;
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import com.sahibinden.test.jLogger;
 
-
+import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
 public class Page extends AbstractFunctions{
@@ -25,12 +23,12 @@ public class Page extends AbstractFunctions{
 
         String driverPath =  System.getProperty("user.dir");
         System.out.println("Project path : " + driverPath);
-        System.setProperty("webdriver.chrome.driver", "/Users/akkaya/Projects/Selenium/chromedriver86");
-
-        driver = new ChromeDriver();
+        //System.setProperty("webdriver.chrome.driver", "/Users/akkaya/Projects/Selenium/chromedriver86");
+        //driver = new ChromeDriver();
+        driver = WebDriverManager.chromedriver().create();
 
         // tum elementler icin maksimum 15 bekleyeck
-        driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
         driver.manage().window().maximize();
 
         return this;
@@ -45,7 +43,7 @@ public class Page extends AbstractFunctions{
         driver = new FirefoxDriver();
 
         // tum elementler icin maksimum 15 bekleyeck
-        driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
         driver.manage().window().maximize();
 
         return this;
@@ -81,7 +79,7 @@ public class Page extends AbstractFunctions{
     }
 
     public Page closeAd() {
-        WebElement element = (new WebDriverWait(driver, 10))
+        WebElement element = (new WebDriverWait(driver, Duration.ofSeconds(10)))
                 .until(ExpectedConditions.elementToBeClickable(ObjectRepo.adScreen));
         element.click();;
 

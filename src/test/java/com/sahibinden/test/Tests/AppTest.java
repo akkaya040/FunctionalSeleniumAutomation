@@ -1,11 +1,7 @@
 package com.sahibinden.test.Tests;
 
-import static org.junit.Assert.assertTrue;
-
 import com.sahibinden.test.Pages.Page;
-import org.junit.Test;
-import org.junit.After;
-import org.junit.Before;
+import org.junit.jupiter.api.*;
 
 /**
  * Unit test for simple App.
@@ -15,7 +11,7 @@ public class AppTest
 
     private Page newPage = new Page();
 
-    @Before
+    @BeforeEach
     public void Before() {
         //before method
     }
@@ -63,11 +59,7 @@ public class AppTest
     }
 
 
-
-
-
-
-    @After
+    @AfterEach
     public void After() {
         //after method
     }

@@ -1,2 +1,91 @@
-/target/
-/.idea/
+# ============================================================
+# Java
+# ============================================================
+*.class
+*.jar
+*.war
+*.ear
+*.nar
+*.zip
+*.tar.gz
+*.rar
+hs_err_pid*
+replay_pid*
+
+# ============================================================
+# Maven
+# ============================================================
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+.mvn/timing.properties
+.mvn/wrapper/maven-wrapper.jar
+
+# ============================================================
+# IntelliJ IDEA
+# ============================================================
+.idea/
+*.iws
+*.iml
+*.ipr
+out/
+.idea_modules/
+
+# ============================================================
+# Eclipse
+# ============================================================
+.classpath
+.project
+.settings/
+.factorypath
+bin/
+
+# ============================================================
+# VS Code
+# ============================================================
+.vscode/
+
+# ============================================================
+# Selenium / WebDriver binaries
+# ============================================================
+chromedriver
+chromedriver86
+geckodriver
+msedgedriver
+*.exe
+
+# ============================================================
+# Test reports & output
+# ============================================================
+surefire-reports/
+failsafe-reports/
+test-output/
+allure-results/
+allure-report/
+reports/
+screenshots/
+logs/
+*.log
+
+# ============================================================
+# macOS
+# ============================================================
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+
+# ============================================================
+# Miscellaneous
+# ============================================================
+*.swp
+*.bak
+*.tmp
+*.orig
