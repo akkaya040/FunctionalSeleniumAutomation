@@ -1,10 +1,12 @@
 package com.sahibinden.test.driver;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
 import lombok.extern.slf4j.Slf4j;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chromium.ChromiumDriver;
+import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.safari.SafariDriver;
 
 import java.time.Duration;
 
@@ -18,7 +20,7 @@ public class DriverManager {
     private static final int IMPLICIT_WAIT_SECONDS = 5;
 
     public enum BrowserType {
-        CHROME, FIREFOX
+        CHROME, FIREFOX, SAFARI, EDGE
     }
 
     private DriverManager() {}
@@ -32,13 +34,18 @@ public class DriverManager {
     public static WebDriver initDriver(BrowserType browser) {
         WebDriver driver;
         switch (browser) {
+            case EDGE:
+                driver = new EdgeDriver();
+                break;
+            case SAFARI:
+                driver = new SafariDriver();
+                break;
             case FIREFOX:
-                WebDriverManager.firefoxdriver().setup();
                 driver = new FirefoxDriver();
                 break;
             case CHROME:
             default:
-                driver = WebDriverManager.chromedriver().create();
+                driver = new ChromeDriver();
                 break;
         }
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(IMPLICIT_WAIT_SECONDS));

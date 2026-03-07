@@ -28,18 +28,18 @@
         <logback.version>1.4.14</logback.version>
         <allure.version>2.25.0</allure.version>
         <aspectj.version>1.9.24</aspectj.version>
-        <webdrivermanager.version>6.3.3</webdrivermanager.version>
+<!--        <webdrivermanager.version>6.3.3</webdrivermanager.version>-->
     </properties>
 
     <dependencies>
 
         <!-- Web Driver Manager -->
-        <dependency>
-            <groupId>io.github.bonigarcia</groupId>
-            <artifactId>webdrivermanager</artifactId>
-            <version>${webdrivermanager.version}</version>
-            <scope>compile</scope>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>io.github.bonigarcia</groupId>-->
+<!--            <artifactId>webdrivermanager</artifactId>-->
+<!--            <version>${webdrivermanager.version}</version>-->
+<!--            <scope>compile</scope>-->
+<!--        </dependency>-->
 
         <!-- JUnit 5 -->
         <dependency>

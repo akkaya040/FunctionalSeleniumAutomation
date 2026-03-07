@@ -17,7 +17,7 @@ public abstract class BaseTest {
     @BeforeEach
     @Step("Drive Setup Steps")
     public void setUp() {
-        driver = DriverManager.initDriver(DriverManager.BrowserType.CHROME);
+        driver = DriverManager.initDriver(DriverManager.BrowserType.FIREFOX);
     }
 
     @AfterEach
